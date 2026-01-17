@@ -6,54 +6,105 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    :root {
+      --bg: #0b0b0b;
+      --bg-dark: #080808;
+      --text: #ffffff;
+      --muted: #aaaaaa;
+      --accent: #c0392b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background-color: #0b0b0b;
-      color: #ffffff;
+      background-color: var(--bg);
+      color: var(--text);
       line-height: 1.6;
     }
 
+    /* NAVBAR */
+    nav {
+      background: var(--bg-dark);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* HERO */
     header {
-      padding: 80px 20px;
+      padding: 100px 20px;
       text-align: center;
       background: linear-gradient(180deg, #0b0b0b, #141414);
     }
 
-    h1 {
-      font-size: 56px;
+    header h1 {
+      font-size: 60px;
       margin-bottom: 10px;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
     }
 
-    .tagline {
-      color: #c0392b;
-      font-size: 18px;
+    header p {
+      color: var(--accent);
       letter-spacing: 1px;
     }
 
     section {
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
-      padding: 60px 20px;
+      padding: 80px 20px;
     }
 
-    h2 {
-      color: #c0392b;
+    section h2 {
+      color: var(--accent);
       margin-bottom: 20px;
+      letter-spacing: 1px;
     }
 
-    .edition {
-      margin-bottom: 40px;
-      padding: 20px;
-      border-left: 4px solid #c0392b;
-      background-color: #111;
+    .card {
+      background: #111;
+      padding: 30px;
+      border-left: 4px solid var(--accent);
+      margin-bottom: 30px;
+    }
+
+    .coming {
+      color: var(--muted);
+      font-style: italic;
     }
 
     footer {
+      background: var(--bg-dark);
       text-align: center;
-      padding: 30px;
-      background-color: #0b0b0b;
+      padding: 40px 20px;
       color: #666;
       font-size: 14px;
     }
@@ -62,40 +113,76 @@
 
 <body>
 
+<nav>
+  <div class="logo">Cronos<span>OS</span></div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#editions">Editions</a>
+    <a href="#download">Download</a>
+    <a href="#community">Community</a>
+  </div>
+</nav>
+
 <header>
   <h1>CronosOS</h1>
-  <p class="tagline">The operating system that controls time</p>
+  <p>The operating system that controls time</p>
 </header>
 
-<section>
-  <h2>About CronosOS</h2>
-  <p>
-    CronosOS is a modern, secure, and performance-oriented operating system
-    designed for users who demand full control over their system.
-  </p>
+<section id="about">
+  <h2>About</h2>
+  <div class="card">
+    <p>
+      CronosOS is a modern Linux-based operating system focused on control,
+      performance, and security.
+    </p>
+    <p class="coming">Status: Coming soon.</p>
+  </div>
 </section>
 
-<section>
+<section id="editions">
   <h2>Editions</h2>
 
-  <div class="edition">
+  <div class="card">
     <h3>CronosOS RadLucks</h3>
-    <p>Privacy-focused edition with zero tracking and full data control.</p>
+    <p>Privacy and security focused edition.</p>
+    <p class="coming">Coming soon.</p>
   </div>
 
-  <div class="edition">
+  <div class="card">
     <h3>CronosOS Standard</h3>
     <p>Complete and balanced edition for everyday use.</p>
+    <p class="coming">Coming soon.</p>
   </div>
 
-  <div class="edition">
+  <div class="card">
     <h3>CronosOS Lukpit</h3>
-    <p>Gaming and performance edition optimized for speed and low latency.</p>
+    <p>Gaming and performance optimized edition.</p>
+    <p class="coming">Coming soon.</p>
+  </div>
+</section>
+
+<section id="download">
+  <h2>Download</h2>
+  <div class="card">
+    <p class="coming">
+      ISO images and installation guides will be available soon.
+    </p>
+  </div>
+</section>
+
+<section id="community">
+  <h2>Community</h2>
+  <div class="card">
+    <p>
+      CronosOS is an open project. Community channels and documentation
+      will be published soon.
+    </p>
+    <p class="coming">Coming soon.</p>
   </div>
 </section>
 
 <footer>
-  © 2026 CronosOS Project
+  © 2026 CronosOS Project · Built for control and stability
 </footer>
 
 </body>
